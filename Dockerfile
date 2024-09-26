@@ -2,11 +2,15 @@ FROM node
 
 WORKDIR /app
 
-COPY . .
+COPY package*.json ./
 
 RUN npm install 
+
+COPY . .
+
+EXPOSE 8080
 
 CMD ["npm", "run", "serve"]
 
 
-EXPOSE 8080
+
